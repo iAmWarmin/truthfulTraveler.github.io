@@ -1,1 +1,1 @@
-# truthfulTravel.github.io
+# truthfulTraveler.github.io
