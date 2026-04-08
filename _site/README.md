@@ -1,0 +1,1 @@
+This is my learning project documenting places that I have traveled, with truthful opinions on my experiences. 
