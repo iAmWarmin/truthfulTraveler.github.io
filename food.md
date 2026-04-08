@@ -1,6 +1,5 @@
 ---
-title: "Sichuan Street Food"
-date: 2026-04-07
+title: Food
 ---
 
 # Sichuan Street Food
