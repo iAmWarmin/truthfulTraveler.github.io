@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First GitHub Site</title>
+    <title>Home | Truthful Traveler</title>
     <style>
         :root {
             --header-bg: #0f172a;
@@ -64,7 +64,8 @@
             transition: color 0.2s ease;
         }
 
-        .nav-list a:hover {
+        .nav-list a:hover,
+        .nav-list a.active {
             color: var(--header-accent);
         }
 
@@ -130,20 +131,21 @@
             <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
             <nav class="site-nav" id="siteNav">
                 <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="food">Food</a></li>
-                    <li><a href="#">Coffee</a></li>
-                    <li><a href="#">Mountain Biking</a></li>
-                    <li><a href="#">Guides</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="food" >Food</a></li>
+                    <li><a href="coffee" >Coffee</a></li>
+                    <li><a href="mountain-biking" >Mountain Biking</a></li>
+                    <li><a href="guides" >Guides</a></li>
+                    <li><a href="contact.html" >Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <h1>About Me</h1>
-        <p>I am a working professional in the FinTech space with a few other passions. This page will document my unbiased, unsponsored opinions.</p>
-    </main>
+    <h1>About Me</h1>
+    <p>I am a working professional in the FinTech space with a few other passions. This page will document my unbiased, unsponsored opinions.</p>
+</main>
+
     <script>
         const menuToggle = document.getElementById("menuToggle");
         const siteNav = document.getElementById("siteNav");

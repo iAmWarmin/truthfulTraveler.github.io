@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food | Truthful Traveler</title>
+    <title>{{ page.title }} | Truthful Traveler</title>
     <style>
         :root {
             --header-bg: #0f172a;
@@ -131,21 +131,17 @@
             <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
             <nav class="site-nav" id="siteNav">
                 <ul class="nav-list">
-                    <li><a href="index.html" >Home</a></li>
-                    <li><a href="food" class="active">Food</a></li>
-                    <li><a href="coffee" >Coffee</a></li>
-                    <li><a href="mountain-biking" >Mountain Biking</a></li>
-                    <li><a href="guides" >Guides</a></li>
-                    <li><a href="contact.html" >Contact</a></li>
+                    <li><a href="index.html" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+                    <li><a href="food" {% if page.url == '/food.html' %}class="active"{% endif %}>Food</a></li>
+                    <li><a href="coffee" {% if page.url == '/coffee.html' %}class="active"{% endif %}>Coffee</a></li>
+                    <li><a href="mountain-biking" {% if page.url == '/mountain-biking.html' %}class="active"{% endif %}>Mountain Biking</a></li>
+                    <li><a href="guides" {% if page.url == '/guides.html' %}class="active"{% endif %}>Guides</a></li>
+                    <li><a href="contact.html" {% if page.url == '/contact.html' %}class="active"{% endif %}>Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main>
-    <h1>Sichuan Street Food</h1>
-    <p>A hidden gem in Pasadena, Sichuan Street Food is that "hole in the wall" that you are looking for to recommend to friends; but only if you like spicy food.</p>
-</main>
-
+    {{ content }}
     <script>
         const menuToggle = document.getElementById("menuToggle");
         const siteNav = document.getElementById("siteNav");

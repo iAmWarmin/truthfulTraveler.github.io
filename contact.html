@@ -1,273 +1,112 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Truthful Traveler</title>
-    <style>
-        :root {
-            --header-bg: #0f172a;
-            --header-fg: #f8fafc;
-            --header-muted: #cbd5e1;
-            --header-accent: #22d3ee;
-            --panel-bg: #ffffff;
-            --panel-border: #cbd5e1;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-        }
+---
+layout: default
+title: Contact
+---
 
-        * {
-            box-sizing: border-box;
-        }
+<style>
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
 
-        body {
-            margin: 0;
-            font-family: "Avenir Next", "Segoe UI", sans-serif;
-            background: linear-gradient(160deg, #f8fafc 0%, #e2e8f0 100%);
-            color: var(--text-main);
-        }
+.panel {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
 
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-        }
+.panel h2 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+}
 
-        .header-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0.9rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
+.panel p {
+    margin-top: 0;
+    color: var(--text-muted);
+}
 
-        .brand {
-            color: var(--header-fg);
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
+.image-slot {
+    min-height: 260px;
+    border: 2px dashed #94a3b8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    color: #64748b;
+    background: #f8fafc;
+}
 
-        .nav-list {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
 
-        .nav-list a {
-            color: var(--header-muted);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
+label {
+    font-weight: 600;
+}
 
-        .nav-list a:hover,
-        .nav-list a.active {
-            color: var(--header-accent);
-        }
+input,
+textarea,
+button {
+    width: 100%;
+    font: inherit;
+}
 
-        .menu-toggle {
-            display: none;
-            background: transparent;
-            color: var(--header-fg);
-            border: 1px solid rgba(248, 250, 252, 0.4);
-            border-radius: 8px;
-            padding: 0.4rem 0.6rem;
-            font-size: 0.95rem;
-            cursor: pointer;
-        }
+input,
+input,
+t: inherit;
+0;
+lumn;
 
-        main {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1rem 2rem;
-        }
+8;
+15, 23, 42, 0.08);
+r-radius: 10px;
+    padding: 0.7rem 0.75rem;
+}
 
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            align-items: start;
-        }
+textarea {
+    min-h    min-h    m    resize: vertical;
+}
 
-        .panel {
-            background: var(--panel-bg);
-            border: 1px solid var(--panel-border);
-            border-radius: 14px;
-            padding: 1rem;
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-        }
+button {
+    background: #0891b2;
+    colo    colo    colo    colo    colo  de    colo    col
+                 rem 1rem;
+        -weight: 700;
+    cursor: pointer;
+    cursor: pointer;
 
-        .panel h2 {
-            margin-top: 0;
-            margin-bottom: 0.4rem;
-        }
+rem;
+ colo    colo ;
+ colo    colo ;
+ter;
 
-        .panel p {
-            margin-top: 0;
-            color: var(--text-muted);
-        }
+768768768768768768act-layout {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 
-        .image-slot {
-            min-height: 260px;
-            border: 2px dashed #94a3b8;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1rem;
-            color: #64748b;
-            background: #f8fafc;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 0.9rem;
-        }
-
-        label {
-            font-weight: 600;
-        }
-
-        input,
-        textarea,
-        button {
-            width: 100%;
-            font: inherit;
-        }
-
-        input,
-        textarea {
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            padding: 0.7rem 0.75rem;
-        }
-
-        textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        button {
-            background: #0891b2;
-            color: #f8fafc;
-            border: 0;
-            border-radius: 10px;
-            padding: 0.75rem 1rem;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #0e7490;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: inline-block;
-            }
-
-            .site-nav {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #0f172a;
-                border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-                display: none;
-            }
-
-            .site-nav.open {
-                display: block;
-            }
-
-            .nav-list {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0;
-                padding: 0.5rem 1rem 1rem;
-            }
-
-            .nav-list li {
-                width: 100%;
-            }
-
-            .nav-list a {
-                display: block;
-                width: 100%;
-                padding: 0.65rem 0;
-            }
-
-            .contact-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="site-header">
-        <div class="header-inner">
-            <a class="brand" href="index.html">Truthful Traveler</a>
-            <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
-            <nav class="site-nav" id="siteNav">
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="food">Food</a></li>
-                    <li><a href="#">Coffee</a></li>
-                    <li><a href="#">Mountain Biking</a></li>
-                    <li><a href="#">Guides</a></li>
-                    <li><a class="active" href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <h1>Contact Us</h1>
-        <div class="contact-layout">
-            <section class="panel" aria-labelledby="imageTitle">
-                <h2 id="imageTitle">Image Space</h2>
-                <p>Add a photo here for your contact page banner or team image.</p>
-                <div class="image-slot">
-                    <span>Image placeholder<br>Replace this area with your image.</span>
+<main>
+    <h1>Contact    <h1>Contact    <h1>Cocontact-layout">    <h1>Contction c    <h1>Contact    <h1>Conta="ima    <h1>C
+            <h2 id="imageTitle">Image Space</h2>
+            <p>Add a photo here for your contact page banner or team image.</p>            <p>Add a photimag            <p>Add a p              <p>Adeholder<br>Replace thi            <p>Add a p.</span>
+                                                 ec               el" aria-labelledby="formTitle">
+            <h2 id="formTitle">Send Feedback</h2            <h2 iShare your feedback and contact email below.                 <form action="#" method="post">
+                <div>
+                                                  l>
+                                  il                                  older="you@example.com" required>
                 </div>
-            </section>
 
-            <section class="panel" aria-labelledby="formTitle">
-                <h2 id="formTitle">Send Feedback</h2>
-                <p>Share your feedback and contact email below.</p>
-                <form action="#" method="post">
-                    <div>
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="you@example.com" required>
-                    </div>
-                    <div>
-                        <label for="feedback">Feedback</label>
-                        <textarea id="feedback" name="feedback" placeholder="Tell us what you think..." required></textarea>
-                    </div>
-                    <button type="submit">Submit Feedback</button>
-                </form>
-            </section>
-        </div>
-    </main>
-
-    <script>
-        const menuToggle = document.getElementById("menuToggle");
-        const siteNav = document.getElementById("siteNav");
-
-        menuToggle.addEventListener("click", () => {
-            const isOpen = siteNav.classList.toggle("open");
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-        });
-    </script>
-</body>
-</html>
+                <div>
+                                   sag   Me                                  <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                                                                                                                     tion>
+    </div>
+</main>
