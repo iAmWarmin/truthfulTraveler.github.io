@@ -3,6 +3,7 @@ layout: post
 title: Sichuan Street Food
 category: food
 date: 2026-02-07
+permalink: /food/sichuan-street-food/
 summary: A hidden gem in Pasadena with excellent spicy chicken.
 ---
 
