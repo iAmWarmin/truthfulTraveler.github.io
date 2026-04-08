@@ -1,9 +1,25 @@
 ---
 layout: default
 title: Travel
+category: travel
 ---
 
 <main>
     <h1>Travel</h1>
-    <p>Coming soon.</p>
+    <p>Travel observations, trips, and destination experiences.</p>
+
+    <section class="posts-list">
+        {% for post in site.posts %}
+            {% if post.category == 'travel' %}
+                <article class="post-summary" style="margin: 2rem 0; padding-bottom: 2rem; border-bottom: 1px solid #e2e8f0;">
+                    <h2 style="margin-top: 0;"><a href="{{ post.url }}" style="color: #0f172a; text-decoration: none;">{{ post.title }}</a></h2>
+                    <div style="color: #475569; font-size: 0.95rem; margin-bottom: 0.5rem;">
+                        <strong>Posted:</strong> {{ post.date | date: "%B %d, %Y" }}
+                        {% if post.modified_date %}<span style="margin-left: 1rem;"><strong>Updated:</strong> {{ post.modified_date | date: "%B %d, %Y" }}</span>{% endif %}
+                    </div>
+                    {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+                </article>
+            {% endif %}
+        {% endfor %}
+    </section>
 </main>

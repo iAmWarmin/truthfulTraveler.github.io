@@ -1,18 +1,25 @@
 ---
 layout: default
 title: Food
+category: food
 ---
 
 <main>
-    <h1>SSF</h1>
-    <h2>Posted: Feb 7, 2027</h2>
-    <p>A hidden gem in Pasadena, SSF is that "hole in the wall" that you are looking for to recommend to friends; but only if you like spicy food.</p>
-    <br>
-    <p>insert image here</p>
-    <br>
-    <p>Come early as this place can have line during peak dinner hours, especially on the weekends.
-        I am a huge fan on their Spicy Chicken dish. I always order it in mild
+    <h1>Food</h1>
+    <p>Unbiased reviews and experiences at restaurants and food establishments.</p>
 
-
-    </p>
+    <section class="posts-list">
+        {% for post in site.posts %}
+            {% if post.category == 'food' %}
+                <article class="post-summary" style="margin: 2rem 0; padding-bottom: 2rem; border-bottom: 1px solid #e2e8f0;">
+                    <h2 style="margin-top: 0;"><a href="{{ post.url }}" style="color: #0f172a; text-decoration: none;">{{ post.title }}</a></h2>
+                    <div style="color: #475569; font-size: 0.95rem; margin-bottom: 0.5rem;">
+                        <strong>Posted:</strong> {{ post.date | date: "%B %d, %Y" }}
+                        {% if post.modified_date %}<span style="margin-left: 1rem;"><strong>Updated:</strong> {{ post.modified_date | date: "%B %d, %Y" }}</span>{% endif %}
+                    </div>
+                    {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+                </article>
+            {% endif %}
+        {% endfor %}
+    </section>
 </main>

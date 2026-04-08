@@ -1,9 +1,12 @@
+---
+---
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee | Truthful Traveler</title>
+    <title>{{ page.title }} | Truthful Traveler</title>
     <style>
         :root {
             --header-bg: #0f172a;
@@ -86,6 +89,30 @@
             padding: 0 1rem;
         }
 
+        .post-meta {
+            color: #475569;
+            font-size: 0.95rem;
+            margin: 0.5rem 0 1.5rem;
+        }
+
+        .post-meta span {
+            margin-right: 1rem;
+        }
+
+        .post-content {
+            line-height: 1.6;
+        }
+
+        .post-content h2,
+        .post-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .post-content p {
+            margin: 0.75rem 0;
+        }
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: inline-block;
@@ -131,27 +158,31 @@
             <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
             <nav class="site-nav" id="siteNav">
                 <ul class="nav-list">
-                    <li><a href="index.html" >Home</a></li>
-                    <li><a href="food" >Food</a></li>
-                    <li><a href="coffee" class="active">Coffee</a></li>
-                    <li><a href="mountain-biking" >Mountain Biking</a></li>
-                    <li><a href="travel" >Travel</a></li>
-                    <li><a href="flight-experiences" >Flight Experiences</a></li>
-                    <li><a href="contact.html" >Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="food">Food</a></li>
+                    <li><a href="coffee">Coffee</a></li>
+                    <li><a href="mountain-biking">Mountain Biking</a></li>
+                    <li><a href="travel">Travel</a></li>
+                    <li><a href="flight-experiences">Flight Experiences</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main>
-    <h1>Coffee</h1>
-    <p>Coffee shop reviews and espresso adventures.</p>
 
-    <section class="posts-list">
-        
-            
-        
-    </section>
-</main>
+    <main>
+        <article class="post">
+            <h1>{{ page.title }}</h1>
+            <div class="post-meta">
+                <span><strong>Posted:</strong> {{ page.date | date: "%B %d, %Y" }}</span>
+                {% if page.modified_date %}<span><strong>Updated:</strong> {{ page.modified_date | date: "%B %d, %Y" }}</span>{% endif %}
+            </div>
+            {% if page.summary %}<p><strong>Summary:</strong> {{ page.summary }}</p>{% endif %}
+            <div class="post-content">
+                {{ content }}
+            </div>
+        </article>
+    </main>
 
     <script>
         const menuToggle = document.getElementById("menuToggle");
