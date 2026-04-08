@@ -136,6 +136,7 @@
                     <li><a href="coffee" >Coffee</a></li>
                     <li><a href="mountain-biking" >Mountain Biking</a></li>
                     <li><a href="travel" >Travel</a></li>
+                    <li><a href="flight-experiences" >Flight Experiences</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
@@ -198,54 +199,65 @@ button {
 }
 
 input,
-input,
-t: inherit;
-0;
-lumn;
-
-8;
-15, 23, 42, 0.08);
-r-radius: 10px;
+textarea {
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
     padding: 0.7rem 0.75rem;
 }
 
 textarea {
-    min-h    min-h    m    resize: vertical;
+    min-height: 140px;
+    resize: vertical;
 }
 
 button {
     background: #0891b2;
-    colo    colo    colo    colo    colo  de    colo    col
-                 rem 1rem;
-        -weight: 700;
+    color: #f8fafc;
+    border: 0;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-weight: 700;
     cursor: pointer;
-    cursor: pointer;
+}
 
-rem;
- colo    colo ;
- colo    colo ;
-ter;
+button:hover {
+    background: #0e7490;
+}
 
-768768768768768768act-layout {
+@media (max-width: 768px) {
+    .contact-layout {
         grid-template-columns: 1fr;
     }
 }
 </style>
 
 <main>
-    <h1>Contact    <h1>Contact    <h1>Cocontact-layout">    <h1>Contction c    <h1>Contact    <h1>Conta="ima    <h1>C
-            <h2 id="imageTitle">Image Space</h2>
-            <p>Add a photo here for your contact page banner or team image.</p>            <p>Add a photimag            <p>Add a p              <p>Adeholder<br>Replace thi            <p>Add a p.</span>
-                                                 ec               el" aria-labelledby="formTitle">
-            <h2 id="formTitle">Send Feedback</h2            <h2 iShare your feedback and contact email below.                 <form action="#" method="post">
-                <div>
-                                                  l>
-                                  il                                  older="you@example.com" required>
-                </div>
+    <h1>Contact</h1>
+    <p>Send feedback, ask questions, or request a collaboration.</p>
+    <div class="contact-layout">
+        <section class="panel" aria-labelledby="imageTitle">
+            <h2 id="imageTitle">Message</h2>
+            <p>Prefer email? Use the form to send a quick note and I will reply as soon as I can.</p>
+            <div class="image-slot">
+                <span>Contact illustration<br>or image goes here.</span>
+            </div>
+        </section>
 
+        <section class="panel" aria-labelledby="formTitle">
+            <h2 id="formTitle">Send Feedback</h2>
+            <p>Your message will go directly to the site owner.</p>
+            <form action="#" method="post">
                 <div>
-                                   sag   Me                                  <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
-                                                                                                                     tion>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </div>
 </main>
 
